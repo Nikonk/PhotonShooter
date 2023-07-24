@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3684805266570400763}
   - component: {fileID: 4533433305167967753}
   - component: {fileID: 1639086382144752086}
+  - component: {fileID: 8792082380003645248}
   m_Layer: 0
   m_Name: fireball
   m_TagString: Untagged
@@ -146,7 +147,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1639086382144752086
 MonoBehaviour:
@@ -161,3 +162,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _explosionPrefab: {fileID: 5112403345868107899, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
+--- !u!114 &8792082380003645248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800716110502408512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724ebb8ee3f34816a12d4e95d1545685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5

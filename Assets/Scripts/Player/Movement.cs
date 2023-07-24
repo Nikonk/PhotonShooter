@@ -49,6 +49,6 @@ public class Movement : MonoBehaviour
         if (_direction.sqrMagnitude < 0.01)
             return;
 
-        _rigidbody.MovePosition((Vector2)transform.position + _direction * _speed * Time.deltaTime);
+        _rigidbody.MovePosition((Vector2)transform.position + _direction * (_speed * Time.deltaTime));
     }
 }
