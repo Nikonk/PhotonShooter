@@ -23,9 +23,6 @@ public class Health : MonoBehaviour
             float healthProcent = _currentValue > 0 ? (float)_currentValue / (float)_maxValue
                                                     : 0;
 
-            if (healthProcent == 0 && TryGetComponent<Movement>(out Movement movement))
-                movement.enabled = false;
-            
             OnHealthChange?.Invoke(healthProcent);
         }
     }

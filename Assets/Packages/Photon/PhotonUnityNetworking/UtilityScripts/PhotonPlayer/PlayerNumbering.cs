@@ -220,7 +220,7 @@ namespace Photon.Pun.UtilityScripts
             }
 
             object value;
-			if (player.CustomProperties.TryGetValue (PlayerNumbering.RoomPlayerIndexedProp, out value)) {
+			if (player.CustomProperties.TryGetValue(PlayerNumbering.RoomPlayerIndexedProp, out value)) {
 				return (byte)value;
 			}
             return -1;
