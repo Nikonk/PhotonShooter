@@ -1,16 +1,13 @@
 using System;
-using System.IO;
 using Photon.Pun;
 using UnityEngine;
 
 public class ShootingOnMove : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D _projectilePrefab;
+    [SerializeField] private ProjectilePool _projectilePool;
     [SerializeField] private float _force;
-    
-    private readonly string _prefabPath = $"Prefabs{Path.DirectorySeparatorChar}Projectiles";
 
-    private Vector2 _shootDirection = new Vector2(1, 0);
+    private Vector2 _shootDirection = new(1, 0);
     private Vector2 _shootPosition;
 
     private PlayerInput _playerInput;
@@ -56,14 +53,12 @@ public class ShootingOnMove : MonoBehaviour
     private void Shoot()
     {
         OnShoot?.Invoke();
-        
-        string shootPrefabPath = _prefabPath + Path.DirectorySeparatorChar + _projectilePrefab.name;
 
         _shootPosition = (Vector2)transform.position + _shootDirection * 1.5f;
 
         float angle = Vector2.SignedAngle(Vector2.down, _shootDirection.normalized);
 
-        var spawnShoot = PhotonNetwork.Instantiate(shootPrefabPath, _shootPosition, Quaternion.Euler(0, 0, angle)).GetComponent<Rigidbody2D>();
-        spawnShoot.AddForce(_shootDirection * _force, ForceMode2D.Impulse);
+        var spawnShoot = _projectilePool.Pull(_shootPosition, Quaternion.Euler(0, 0, angle));
+        spawnShoot.GetComponent<Rigidbody2D>().AddForce(_shootDirection * _force, ForceMode2D.Force);
     }
 }

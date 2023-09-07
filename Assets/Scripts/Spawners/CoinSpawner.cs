@@ -1,13 +1,12 @@
 using System.Collections;
 using System.IO;
-using Photon.Pun;
 using UnityEngine;
+using Photon.Pun;
 
 public class CoinSpawner : Spawner
 {
-    [Header("Coin Settings")] [SerializeField]
-    private int _startCoinCount = 5;
-
+    [Header("Coin Settings")]
+    [SerializeField] private int _startCoinCount = 5;
     [SerializeField] private float _spawnTime = 5;
 
     private readonly string _prefabPath = $"Prefabs{Path.DirectorySeparatorChar}Currency{Path.DirectorySeparatorChar}";

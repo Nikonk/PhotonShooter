@@ -3,7 +3,7 @@ using UnityEngine;
 public class HealthRenderer : MonoBehaviour
 {
     private const string _healthName = "_Health";
-    
+
     private Renderer _healthRenderer;
     private MaterialPropertyBlock _materialPropertyBlock;
 

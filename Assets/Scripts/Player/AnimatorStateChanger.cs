@@ -10,7 +10,7 @@ public class AnimatorStateChanger : MonoBehaviour
     private const string _DamageParameter = "Damage";
     private const string _RandomParameter = "Random";
     private const string _DieParameter = "Dead";
-    
+
     private Animator _animator;
 
     private Movement _movement;
@@ -62,8 +62,8 @@ public class AnimatorStateChanger : MonoBehaviour
     {
         if (value != 0)
             return;
-        
-        _animator.SetFloat(_RandomParameter, Random.Range(0, 1));
+
+        _animator.SetFloat(_RandomParameter, Random.Range(0f, 1f));
         _animator.SetTrigger(_DieParameter);
     }
 
@@ -71,7 +71,7 @@ public class AnimatorStateChanger : MonoBehaviour
     {
         if (value == 0)
             return;
-        
+
         _animator.SetTrigger(_DamageParameter);
     }
 }

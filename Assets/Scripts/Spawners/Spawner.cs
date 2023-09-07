@@ -1,4 +1,3 @@
-using System.IO;
 using UnityEngine;
 using Photon.Pun;
 
@@ -6,12 +5,12 @@ public abstract class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject _spawnPrefab;
 
-    [Header("Spawn Bounds")] 
+    [Header("Spawn Bounds")]
     [SerializeField] private float _upBound;
     [SerializeField] private float _rightBound;
     [SerializeField] private float _bottomBound;
     [SerializeField] private float _leftBound;
-    
+
     private Coroutine _spawnCoroutine;
 
     protected virtual void OnValidate()

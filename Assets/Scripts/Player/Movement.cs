@@ -9,9 +9,9 @@ public class Movement : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
     private Vector2 _direction;
+    private bool _controllable = true;
 
     private Health _health;
-    private bool _controllable = true;
 
     private PlayerInput _playerInput;
 
@@ -47,7 +47,7 @@ public class Movement : MonoBehaviour
 
         if (_controllable == false)
             return;
-        
+
         _direction = _playerInput.Player.Move.ReadValue<Vector2>();
     }
 
@@ -60,7 +60,7 @@ public class Movement : MonoBehaviour
     private void OnDisable()
     {
         _playerInput.Disable();
-        
+
         _health.OnHealthChange -= OnDead;
     }
 
